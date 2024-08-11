@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import random
-import plotly.express as px
+import plotly.express as px  # Correct import
 
 # Set page title
 st.set_page_config(page_title="Top 100 ABA Law Schools by Simulated Salary")
@@ -46,19 +46,16 @@ def main():
     # Reorder columns
     df_sorted = df_sorted[['Rank', 'School', 'Simulated Average Salary']]
 
-    # Create a Plotly bar chart for the top 10 schools by simulated salary
-    top_10_schools = df_sorted.head(10)
-    fig = px.bar(
-        top_10_schools,
-        x='Simulated Average Salary',
-        y='School',
-        orientation='h',
-        title='Top 10 Law Schools by Simulated Average Salary',
+    # Create a Plotly box plot for the salary distribution
+    fig = px.box(
+        df_sorted,
+        y='Simulated Average Salary',
+        x='School',
+        title='Salary Distribution for Top 100 Law Schools',
         labels={'Simulated Average Salary': 'Salary (USD)', 'School': 'Law School'},
-        text='Simulated Average Salary'
+        points="all"  # Display all points for clarity
     )
-    fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
-    fig.update_layout(yaxis=dict(autorange="reversed"), height=500)
+    fig.update_layout(xaxis=dict(tickangle=-45), height=600)
     
     # Display the Plotly chart in Streamlit
     st.plotly_chart(fig)
