@@ -3,7 +3,6 @@ import pandas as pd
 import random
 import plotly.express as px  # Correct import
 
-
 # Setting page layout
 st.set_page_config(
     page_title="ABA Simulated Salaries",
@@ -32,9 +31,6 @@ st.sidebar.markdown("""
 
 # Copyright
 st.sidebar.caption("©️ Copyright 2024 J. Davis")
-
-# Set page title
-st.set_page_config(page_title="Top 100 ABA Law Schools by Simulated Salary")
 
 # Function to get ABA-approved law schools from CSV
 @st.cache_data
