@@ -13,7 +13,7 @@ st.set_page_config(
 
 # Sidebar for API Key and User Info
 st.sidebar.header("About App")
-st.sidebar.markdown('This is an app that lists the "Top 100 ABA-Approved Law Schools Ranked by Simulated Average Salary for Recent Graduates" and then displays it in a Plotly chart created by <a href="https://ai.jdavis.xyz" target="_blank">0xjdavis</a>.', unsafe_allow_html=True)
+st.sidebar.markdown('This is an app that was generated through a text-to-code method using GPT, Sonnet, Artifacts and a open source code interpretor by <a href="https://ai.jdavis.xyz" target="_blank">0xjdavis</a>.', unsafe_allow_html=True)
 
 # Calendly
 st.sidebar.markdown("""
